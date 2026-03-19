@@ -1,0 +1,265 @@
+# ============================================================
+# AI Digest – Configuration
+# ============================================================
+
+# --- Feed Sources ---
+# Each feed has a name, URL, and optional category tag.
+feeds:
+  # --- Big Tech / Industry ---
+  - name: "OpenAI Blog"
+    url: "https://openai.com/blog/rss.xml"
+    category: "industry"
+  - name: "Anthropic News"
+    url: "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml"
+    category: "industry"
+  - name: "Anthropic Engineering"
+    url: "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_engineering.xml"
+    category: "industry"
+  - name: "Anthropic Research"
+    url: "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_research.xml"
+    category: "industry"
+  - name: "Google AI Blog"
+    url: "https://blog.google/technology/ai/rss/"
+    category: "industry"
+  - name: "Microsoft AI Blog"
+    url: "https://blogs.microsoft.com/ai/feed/"
+    category: "industry"
+  - name: "Meta Engineering"
+    url: "https://engineering.fb.com/feed/"
+    category: "industry"
+  - name: "Meta Research"
+    url: "https://research.facebook.com/feed/"
+    category: "industry"
+  - name: "NVIDIA AI Blog"
+    url: "https://blogs.nvidia.com/feed/"
+    category: "industry"
+  - name: "Apple ML Research"
+    url: "https://machinelearning.apple.com/rss.xml"
+    category: "industry"
+  - name: "Hugging Face Blog"
+    url: "https://huggingface.co/blog/feed.xml"
+    category: "open-source"
+ 
+  # --- News & Media ---
+  - name: "TechCrunch AI"
+    url: "https://techcrunch.com/category/artificial-intelligence/feed/"
+    category: "news"
+  - name: "The Verge AI"
+    url: "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"
+    category: "news"
+  - name: "Ars Technica AI"
+    url: "https://feeds.arstechnica.com/arstechnica/features"
+    category: "news"
+  - name: "MIT Technology Review AI"
+    url: "https://www.technologyreview.com/feed/"
+    category: "news"
+  - name: "VentureBeat AI"
+    url: "https://venturebeat.com/category/ai/feed/"
+    category: "news"
+ 
+  # --- Research ---
+  - name: "ArXiv cs.AI"
+    url: "https://rss.arxiv.org/rss/cs.AI"
+    category: "research"
+  - name: "ArXiv cs.LG"
+    url: "https://rss.arxiv.org/rss/cs.LG"
+    category: "research"
+ 
+  # --- Community ---
+  - name: "r/LocalLLaMA"
+    url: "https://www.reddit.com/r/LocalLLaMA/hot.rss"
+    category: "community"
+  - name: "r/MachineLearning"
+    url: "https://www.reddit.com/r/MachineLearning/hot.rss"
+    category: "community"
+  - name: "Hacker News (AI)"
+    url: "https://hnrss.org/newest?q=AI+OR+LLM+OR+GPT+OR+machine+learning"
+    category: "community"
+ 
+  # --- Asia / China AI ---
+  - name: "Hacker News (China AI)"
+    url: "https://hnrss.org/newest?q=DeepSeek+OR+Qwen+OR+Baidu+OR+Alibaba+AI+OR+Chinese+AI+OR+MiniMax"
+    category: "asia"
+  - name: "r/LocalLLaMA (China)"
+    url: "https://www.reddit.com/r/LocalLLaMA/search.rss?q=qwen+OR+deepseek+OR+minimax+OR+baichuan+OR+yi&sort=hot&t=week"
+    category: "asia"
+  - name: "South China Morning Post Tech"
+    url: "https://www.scmp.com/rss/4/feed"
+    category: "asia"
+  - name: "TechNode"
+    url: "https://technode.com/feed/"
+    category: "asia"
+ 
+# --- Topic Profiles ---
+# The LLM scores each article against these topics.
+# weight: how important this topic is in the final score (0.0 - 1.0)
+# keywords: help the LLM understand what to look for
+topics:
+  - name: "Local & Open-Source LLMs"
+    weight: 1.0
+    keywords:
+      - "open source model"
+      - "local LLM"
+      - "ollama"
+      - "llama.cpp"
+      - "GGUF"
+      - "quantization"
+      - "fine-tuning"
+      - "self-hosted AI"
+      - "vLLM"
+      - "open weights"
+ 
+  - name: "AI Research & Science"
+    weight: 1.0
+    keywords:
+      - "paper"
+      - "arxiv"
+      - "research"
+      - "novel architecture"
+      - "transformer"
+      - "diffusion"
+      - "reinforcement learning"
+      - "RLHF"
+      - "alignment"
+      - "interpretability"
+      - "mechanistic"
+      - "scaling law"
+      - "emergent"
+      - "multimodal"
+      - "reasoning"
+      - "chain of thought"
+      - "inference time compute"
+ 
+  - name: "AI aus Asien & China"
+    weight: 0.9
+    keywords:
+      - "Qwen"
+      - "DeepSeek"
+      - "Baichuan"
+      - "Yi"
+      - "MiniMax"
+      - "Alibaba"
+      - "Tencent"
+      - "Baidu"
+      - "ByteDance"
+      - "SenseTime"
+      - "Zhipu"
+      - "GLM"
+      - "01.AI"
+      - "Mistral"
+      - "StepFun"
+      - "Moonshot"
+      - "Chinese AI"
+      - "Asia AI"
+ 
+  - name: "AI Dev Tools & Coding Agents"
+    weight: 0.9
+    keywords:
+      - "code generation"
+      - "coding agent"
+      - "AI IDE"
+      - "copilot"
+      - "Claude Code"
+      - "cursor"
+      - "agentic coding"
+      - "MCP"
+      - "tool use"
+      - "function calling"
+ 
+  - name: "Major Breakthroughs & Milestones"
+    weight: 0.8
+    keywords:
+      - "state of the art"
+      - "breakthrough"
+      - "benchmark"
+      - "new model release"
+      - "GPT"
+      - "Claude"
+      - "Gemini"
+      - "frontier model"
+      - "scaling"
+      - "AGI"
+ 
+  - name: "Big Tech AI News"
+    weight: 0.7
+    keywords:
+      - "Google"
+      - "Microsoft"
+      - "Apple"
+      - "Meta"
+      - "Amazon"
+      - "NVIDIA"
+      - "OpenAI"
+      - "Anthropic"
+      - "product launch"
+      - "acquisition"
+      - "partnership"
+
+# --- LLM Settings ---
+llm:
+  # Backend: "ollama" (local) or "openrouter" (cloud API)
+  backend: "openrouter"
+
+  # ── OpenRouter Settings (when backend: openrouter) ──
+  # Get your API key at https://openrouter.ai/keys
+  # Can also be set via OPENROUTER_API_KEY environment variable
+  api_key: ""  # or set env var OPENROUTER_API_KEY
+
+  # Stage 1: Fast model for relevance screening (runs on ALL articles)
+  filter_model: "google/gemini-2.5-flash-lite"
+
+  # Stage 2: Smarter model for summarization (runs on TOP articles only)
+  summary_model: "minimax/minimax-m2.5"
+
+  # Optional: your site name for OpenRouter dashboard tracking
+  site_name: "AI Digest"
+
+  # ── Ollama Settings (when backend: ollama) ──
+  # Uncomment these and set backend: "ollama" to use local models
+  # base_url: "http://localhost:11434"
+  # filter_model: "qwen3:8b"
+  # summary_model: "qwen3:30b"
+
+  # ── Common Settings ──
+  # How many articles pass from stage 1 → stage 2
+  top_n: 15
+
+  # Relevance threshold (0-10) – articles below this are discarded
+  min_relevance: 4
+
+  # Request timeout in seconds
+  timeout: 120
+
+# --- Email Settings ---
+email:
+  # SMTP server config
+  smtp_host: "smtp.example.com"
+  smtp_port: 587
+  smtp_user: "your-email@example.com"
+  smtp_password: "your-app-password"   # Use app passwords, not your real password!
+  use_tls: true
+
+  # Who gets the digest
+  from_addr: "AI Digest <your-email@example.com>"
+  to_addrs:
+    - "you@example.com"
+
+  # Subject line (supports {date} placeholder)
+  subject: "🤖 AI Digest – {date}"
+
+# --- General Settings ---
+general:
+  # SQLite database for deduplication
+  db_path: "~/.ai-digest/articles.db"
+
+  # How many days to look back for articles
+  lookback_days: 1
+
+  # Max articles to fetch per feed
+  max_per_feed: 30
+
+  # User-Agent for HTTP requests
+  user_agent: "AI-Digest/1.0 (Personal News Aggregator)"
+
+  # Log level: DEBUG, INFO, WARNING, ERROR
+  log_level: "INFO"
