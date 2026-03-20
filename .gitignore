@@ -5,3 +5,4 @@ openrouter.txt
 .agents/
 .gemini/
 *.sh
+*.log
