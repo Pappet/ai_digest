@@ -1,1 +1,7 @@
 openrouter.txt
+/venv
+*csv
+.claude/
+.agents/
+.gemini/
+*.sh
