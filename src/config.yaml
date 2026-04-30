@@ -233,16 +233,16 @@ llm:
 # --- Email Settings ---
 email:
   # SMTP server config
-  smtp_host: "smtp.example.com"
+  smtp_host: "smtp.gmail.com"
   smtp_port: 587
-  smtp_user: "your-email@example.com"
-  smtp_password: "your-app-password"   # Use app passwords, not your real password!
+  smtp_user: "[EMAIL_ADDRESS]"
+  smtp_password: "[PASSWORD]"
   use_tls: true
 
   # Who gets the digest
-  from_addr: "AI Digest <your-email@example.com>"
+  from_addr: "AI Digest <[EMAIL_ADDRESS]>"
   to_addrs:
-    - "you@example.com"
+    - "[EMAIL_ADDRESS]"
 
   # Subject line (supports {date} placeholder)
   subject: "🤖 AI Digest – {date}"

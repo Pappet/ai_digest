@@ -23,6 +23,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from pathlib import Path
 from typing import Optional
+from dotenv import load_dotenv
 
 import feedparser
 import requests
@@ -591,7 +592,16 @@ def create_llm_client(llm_cfg: dict) -> LLMClient:
     backend = llm_cfg.get("backend", "ollama").lower()
 
     if backend == "openrouter":
-        api_key = llm_cfg.get("api_key") or os.environ.get("OPENROUTER_API_KEY", "")
+        load_dotenv()
+
+        api_key = os.getenv("OPENROUTER_API_KEY")
+
+        if not api_key:
+            print("Kritischer Fehler: OPENROUTER_API_KEY wurde nicht in der .env oder Umgebung gefunden.")
+            sys.exit(1)
+
+        print("API Key erfolgreich geladen. Authentifizierung wird vorbereitet...")
+
         return OpenRouterClient(
             api_key=api_key,
             timeout=llm_cfg.get("timeout", 120),
@@ -917,6 +927,7 @@ def run(config_path: str, dry_run: bool = False, stdout: bool = False, reset_db:
     log = logging.getLogger("ai-digest")
     log.info("=" * 60)
     log.info("AI Digest Pipeline Starting")
+    log.info("datetime.now()")
     log.info("=" * 60)
 
     # Parse topic profiles
