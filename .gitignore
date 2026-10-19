@@ -53,3 +53,7 @@ MANIFEST
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Local config backups
+src/config.local.yaml.bak*
+*.bak-*

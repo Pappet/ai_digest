@@ -509,7 +509,7 @@ class OpenRouterClient(LLMClient):
             "model": model,
             "messages": messages,
             "temperature": 0.3,
-            "max_tokens": 1024,
+            "max_tokens": 4096,
         }
 
         try:
